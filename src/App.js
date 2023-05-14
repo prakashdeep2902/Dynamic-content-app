@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
 const App = () => {
+
+
+
   const [products, setProducts] = useState([]);
-
-
   useEffect(() => {
-    
     fetch('./data.json')
       .then(response => response.json())
       .then(data => setProducts(data.products))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
+  console.log(window.location.search)
+
 
   const getPageData = () => {
     const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams)
     const productId = urlParams.get('id');
+    console.log(productId)
     return products.find(product => product.id === parseInt(productId));
   };
-
   const pageData = getPageData();
-//  console.log(products)
+
+  console.log(pageData)
 
 
   return (
@@ -41,7 +45,27 @@ const App = () => {
           ))}
         </div>
       ) : (
-        <p>Page not found.</p>
+        products && products.map((pro, index) => {
+
+          return (
+
+            <div className='container0fPage' key={index}>
+
+              <h2>{pro.title}</h2>
+              <p>product Number::{pro.id}</p>
+              <p>{pro.description}</p>
+              <p>Price: ${pro.price}</p>
+              <p>Discount: {pro.discountPercentage}%</p>
+              <p>Rating: {pro.rating}</p>
+              <p>Stock: {pro.stock}</p>
+              <p>Brand: {pro.brand}</p>
+              <p>Category: {pro.category}</p>
+              <img src={pro.thumbnail} alt={pro.title} />
+
+            </div>
+          )
+
+        })
       )}
     </div>
   );
