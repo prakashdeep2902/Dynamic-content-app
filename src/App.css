@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.container0fPage{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: 2px solid gray;
+  display: flex;
+  flex-wrap:wrap ;
+  flex-direction: column;
+  width: auto;
+  margin: 1rem;
+  width: 30rem;
+  justify-content: center;
+  align-content: center;
+
+}
+.container0fPage img{
+
+  width: 100%;
+  height: 15rem;
+}
+.container0fPage p{
+
+  /* border: 2px solid red; */
+  font-size: 2rem;
+}
+.Idcontainer{
+
+  border: 2px solid gray;
+  margin-top: 2rem;
+}
+.Idcontainer img{
+
+
+  width: 20rem;
+  height: 20rem;
+  margin: 1rem;
+}
+.Idcontainer h2{
+
+  font-size: 2rem;
+}
+.Idcontainer p{
+
+
+  font-size: 2rem;
+  ;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
