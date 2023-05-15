@@ -41,7 +41,7 @@ const App = () => {
           <p>Category: {pageData.category}</p>
           <img src={pageData.thumbnail} alt={pageData.title} />
           {pageData.images.map((image, index) => (
-            <img key={index} src={image} alt={`Image ${index + 1}`} />
+            <img key={index} src={image} alt={`Product ${index + 1}`} />
           ))}
         </div>
       ) : (
