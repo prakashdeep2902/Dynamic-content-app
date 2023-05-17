@@ -3,8 +3,6 @@ import './App.css'
 
 const App = () => {
 
-
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch('./data.json')
@@ -14,20 +12,12 @@ const App = () => {
   }, []);
 
   console.log(window.location.search)
-
-
   const getPageData = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams)
     const productId = urlParams.get('id');
-    console.log(productId)
     return products.find(product => product.id === parseInt(productId));
   };
   const pageData = getPageData();
-
-  console.log(pageData)
-
-
   return (
     <div>
       {pageData ? (
